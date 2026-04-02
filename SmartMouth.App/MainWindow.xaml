@@ -1,0 +1,128 @@
+<Window x:Class="SmartMouth.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SmartMouth"
+        Height="760"
+        Width="860"
+        WindowStartupLocation="CenterScreen">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="16">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       FontSize="24"
+                       FontWeight="SemiBold"
+                       Text="SmartMouth Mouse Offset Controller"/>
+
+            <GroupBox Grid.Row="1" Margin="0,12,0,0" Header="Trigger">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,12,8">
+                        <TextBlock Text="Input Type" Margin="0,0,0,4"/>
+                        <ComboBox x:Name="TriggerTypeCombo" MinWidth="140" SelectionChanged="TriggerTypeCombo_OnSelectionChanged"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0" Grid.Column="1" Margin="0,0,0,8">
+                        <TextBlock Text="Mode" Margin="0,0,0,4"/>
+                        <ComboBox x:Name="TriggerModeCombo" MinWidth="140"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,0,12,0">
+                        <TextBlock Text="Keyboard Key" Margin="0,0,0,4"/>
+                        <ComboBox x:Name="KeyboardKeyCombo" MinWidth="140"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBlock Text="Mouse Button" Margin="0,0,0,4"/>
+                        <ComboBox x:Name="MouseButtonCombo" MinWidth="140"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Row="2" Margin="0,12,0,0" Header="Direction Settings">
+                <Grid Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Direction" FontWeight="Bold" Margin="0,0,0,8"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="Enabled" FontWeight="Bold" Margin="0,0,0,8"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="Offset (px)" FontWeight="Bold" Margin="0,0,0,8"/>
+                    <TextBlock Grid.Row="0" Grid.Column="3" Text="Interval (ms)" FontWeight="Bold" Margin="0,0,0,8"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Up" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                    <CheckBox x:Name="UpEnabledCheck" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                    <TextBox x:Name="UpOffsetText" Grid.Row="1" Grid.Column="2" Margin="0,0,8,8"/>
+                    <TextBox x:Name="UpIntervalText" Grid.Row="1" Grid.Column="3" Margin="0,0,0,8"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Down" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                    <CheckBox x:Name="DownEnabledCheck" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                    <TextBox x:Name="DownOffsetText" Grid.Row="2" Grid.Column="2" Margin="0,0,8,8"/>
+                    <TextBox x:Name="DownIntervalText" Grid.Row="2" Grid.Column="3" Margin="0,0,0,8"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Left" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                    <CheckBox x:Name="LeftEnabledCheck" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,0,8"/>
+                    <TextBox x:Name="LeftOffsetText" Grid.Row="3" Grid.Column="2" Margin="0,0,8,8"/>
+                    <TextBox x:Name="LeftIntervalText" Grid.Row="3" Grid.Column="3" Margin="0,0,0,8"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Right" VerticalAlignment="Center"/>
+                    <CheckBox x:Name="RightEnabledCheck" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+                    <TextBox x:Name="RightOffsetText" Grid.Row="4" Grid.Column="2" Margin="0,0,8,0"/>
+                    <TextBox x:Name="RightIntervalText" Grid.Row="4" Grid.Column="3"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Row="3" Margin="0,12,0,0" Header="Options">
+                <StackPanel Orientation="Vertical" Margin="10">
+                    <CheckBox x:Name="AutoStartCheck" Content="Auto start with Windows"/>
+                    <CheckBox x:Name="MinimizeToTrayCheck" Content="Minimize to tray" Margin="0,8,0,0"/>
+                    <CheckBox x:Name="AutoRecoverCheck" Content="Auto recover on error" Margin="0,8,0,0"/>
+                </StackPanel>
+            </GroupBox>
+
+            <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,16,0,0">
+                <Button x:Name="SaveButton" Width="140" Height="34" Content="Save Settings" Click="SaveButton_OnClick"/>
+                <Button x:Name="StartButton" Width="140" Height="34" Margin="8,0,0,0" Content="Start Listener" Click="StartButton_OnClick"/>
+                <Button x:Name="StopButton" Width="140" Height="34" Margin="8,0,0,0" Content="Stop Listener" Click="StopButton_OnClick" IsEnabled="False"/>
+                <Button x:Name="ForceStopButton" Width="140" Height="34" Margin="8,0,0,0" Content="Force Stop Offset" Click="ForceStopButton_OnClick"/>
+            </StackPanel>
+
+            <Border Grid.Row="5" Margin="0,12,0,0" Padding="12" CornerRadius="6" Background="#FFF5F5F5" BorderBrush="#FFDCDCDC" BorderThickness="1">
+                <TextBlock x:Name="StatusText" Text="Status: Stopped"/>
+            </Border>
+
+            <TextBlock Grid.Row="6"
+                       Margin="0,8,0,0"
+                       Foreground="#FF666666"
+                       TextWrapping="Wrap"
+                       Text="Tip: In Hold mode, movement runs while key/button is pressed. In Toggle mode, each press toggles movement on/off."/>
+        </Grid>
+    </ScrollViewer>
+</Window>
