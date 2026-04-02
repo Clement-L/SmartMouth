@@ -16,4 +16,4 @@ bash publish.sh
 
 This will execute `dotnet publish` for `SmartMouth.App` and output a runnable exe to:
 
-`/home/runner/work/SmartMouth/SmartMouth/publish/win-x64/SmartMouth.App.exe`
+`publish/win-x64/SmartMouth.App.exe`
