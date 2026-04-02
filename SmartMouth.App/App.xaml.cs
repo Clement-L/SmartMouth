@@ -8,4 +8,3 @@ namespace SmartMouth.App;
 public partial class App : Application
 {
 }
-
