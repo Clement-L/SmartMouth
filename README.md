@@ -1,1 +1,19 @@
 # SmartMouth
+
+## Build
+
+```bash
+dotnet build SmartMouth.slnx -c Release
+```
+
+## Publish executable (.exe)
+
+Run from repository root:
+
+```bash
+bash publish.sh
+```
+
+This will execute `dotnet publish` for `SmartMouth.App` and output a runnable exe to:
+
+`/home/runner/work/SmartMouth/SmartMouth/publish/win-x64/SmartMouth.App.exe`
