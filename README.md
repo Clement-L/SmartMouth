@@ -14,6 +14,12 @@ Run from repository root:
 bash publish.sh
 ```
 
+On Windows:
+
+```bat
+publish.bat
+```
+
 This will execute `dotnet publish` for `SmartMouth.App` and output a runnable exe to:
 
 `publish/win-x64/SmartMouth.App.exe`
