@@ -7,7 +7,7 @@ set "OUTPUT_DIR=%SCRIPT_DIR%publish\win-x64"
 
 dotnet publish "%PROJECT_PATH%" ^
   -c Release ^
-  -f net10.0-windows ^
+  -f net9.0-windows ^
   -r win-x64 ^
   --self-contained false ^
   -o "%OUTPUT_DIR%"
